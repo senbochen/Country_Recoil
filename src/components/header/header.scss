@@ -1,0 +1,30 @@
+.header_wrap {
+    box-shadow: 0 0 6px #a9a9a9;
+    width: 100%;
+    z-index: 9999;
+    transition: all .4s linear;
+    .container {
+        max-width: 1120px;
+        padding: 0 .1rem;
+        margin: auto;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        a {
+            align-self: center;
+            font-size: 24px;
+            font-weight: 900;
+        }
+        .dark-mode {
+            align-self: center;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .header_wrap {
+        padding: 0 20px;
+    }
+}

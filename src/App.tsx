@@ -1,25 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+/*
+ * @Author: your name
+ * @Date: 2021-02-03 11:24:11
+ * @LastEditTime: 2021-02-05 15:47:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \my-app\src\App.tsx
+ */
+import React, { useEffect,useState}from 'react';
 import './App.css';
-
-function App() {
+import './css/global.css';
+import Header from './components/header/header';
+import Search from './components/search/search';
+import CountryList from './components/courty/CoutryList';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Country from './pages/country/country';
+import Style from './pages/style/style';
+import { useRecoilState } from 'recoil';
+import { setColor } from './store/index';
+const App=()=> {
+  const [bgColor, setBgColor] = useRecoilState(setColor);
+  const mainClass = bgColor ? 'dark-theme-bg' : 'light-theme-bg';
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    setBgColor(mq.matches);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Router>
+              <div className="App">
+              <div className={mainClass}>
+                <Header setDarkModeFuc={setBgColor} dark={bgColor} />
+                  <div style={{paddingTop:'40px',paddingBottom:'40px'}}>
+                            <Switch>
+                              <Route path='/country/:id' component={Country}></Route>
+                              <Route path='/style' component={Style}></Route>
+                              <Route path='/'>
+                                      <Search />
+                                      <CountryList/>
+                                </Route>
+                            </Switch>    
+
+                  </div>
+                </div>
+              </div>
+        </Router>
   );
 }
 

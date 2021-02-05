@@ -1,12 +1,22 @@
+/*
+ * @Author: your name
+ * @Date: 2021-02-03 11:24:11
+ * @LastEditTime: 2021-02-05 10:20:39
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \my-app\src\index.tsx
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { RecoilRoot } from 'recoil';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,35 @@
+:root {
+    --background: #fafafa;
+    --black: #000;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+.dark-theme-bg {
+    color: #fff;
+    background-color: #5e5e5e;
+}
+
+.light-theme-bg {
+    background-image: radial-gradient(circle at 28% 44%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 1%, transparent 1%, transparent 73%, transparent 73%, transparent 100%), radial-gradient(circle at 81% 65%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 18%, transparent 18%, transparent 77%, transparent 77%, transparent 100%), radial-gradient(circle at 51% 45%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 11%, transparent 11%, transparent 12%, transparent 12%, transparent 100%), radial-gradient(circle at 10% 56%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 82%, transparent 82%, transparent 90%, transparent 90%, transparent 100%), radial-gradient(circle at 42% 35%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 22%, transparent 22%, transparent 77%, transparent 77%, transparent 100%), radial-gradient(circle at 26% 86%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 17%, transparent 17%, transparent 52%, transparent 52%, transparent 100%), radial-gradient(circle at 52% 88%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 49%, transparent 49%, transparent 70%, transparent 70%, transparent 100%), radial-gradient(circle at 62% 41%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 14%, transparent 14%, transparent 45%, transparent 45%, transparent 100%), radial-gradient(circle at 54% 59%, hsla(77, 0%, 3%, 0.05) 0%, hsla(77, 0%, 3%, 0.05) 42%, transparent 42%, transparent 86%, transparent 86%, transparent 100%), linear-gradient(135deg, hsl(196, 0%, 96%), hsl(196, 0%, 96%));
+    color: #000;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --black: white;
+        --white: #273542;
+        --background: #1a2833;
+    }
+}
+
+@media screen and (max-width:1024px) {}
